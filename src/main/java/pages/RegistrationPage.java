@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import models.User;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -38,6 +39,7 @@ public class RegistrationPage {
         return fields.get(2);
     }
 
+    @Step("Заполнение формы регистрации.")
     public RegistrationPage fillRegistrationForm(User user){
         getNameField().sendKeys(user.getName());
         getEmailField().sendKeys(user.getEmail());
@@ -45,16 +47,19 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Подтверждение регистрации.")
     public LoginPage confirmRegistration(){
         registrationButton.click();
         return Selenide.page(LoginPage.class);
     }
 
+    @Step("Клик по кнопке входа.")
     public LoginPage enterLinkClick(){
         enterLink.click();
         return Selenide.page(LoginPage.class);
     }
 
+    @Step("Получение признака видимости сообщения об ошибке пароля.")
     public boolean isPasswordErrorVisible(){
         return passwordError.is(Condition.visible);
     }

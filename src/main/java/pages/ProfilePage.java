@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -21,16 +22,19 @@ public class ProfilePage {
     @FindBy(how = How.XPATH, using = ".//button[text()='Выход']")
     private SelenideElement logOutButton;
 
+    @Step("Клик по ссылке на Конструктор.")
     public ConstructorPage constructorPageLinkClick(){
         constructorPageLink.click();
         return Selenide.page(ConstructorPage.class);
     }
 
+    @Step("Клик по логотипу.")
     public ConstructorPage logoImageClick() {
         logoImage.click();
         return Selenide.page(ConstructorPage.class);
     }
 
+    @Step("Клик по кнопке выхода.")
     public LoginPage logout() {
         logOutButton.click();
         return Selenide.page(LoginPage.class);

@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -32,41 +33,49 @@ public class ConstructorPage {
     @FindBy(how = How.XPATH,using = ".//div[span[text()='Начинки']]")
     private SelenideElement fillingsTab;
 
+    @Step("Клик по кнопке профиля.")
     public ProfilePage goToProfilePage(){
         profilePageLink.click();
         return Selenide.page(ProfilePage.class);
     }
 
+    @Step("Клик по входа в аккаунт.")
     public LoginPage goToLoginPage(){
         loginButton.click();
         return Selenide.page(LoginPage.class);
     }
 
+    @Step("Клик по вкладке соусов.")
     public ConstructorPage clickSouse() {
         saucesTab.click();
         return this;
     }
 
+    @Step("Клик по вкладке начинок.")
     public ConstructorPage clickFilling() {
         fillingsTab.click();
         return this;
     }
 
+    @Step("Клик по вкладке булочек.")
     public ConstructorPage clickBun() {
         bunsTab.click();
         return this;
     }
 
+    @Step("Проверка выбранности вкладки с соусами.")
     public ConstructorPage shouldSouseTabBeSelected() {
         saucesTab.shouldBe(Condition.cssClass(CURRENT_TAB_CSS_LASS_NAME));
         return this;
     }
 
+    @Step("Проверка выбранности вкладки с начинками.")
     public ConstructorPage shouldFillingTabBeSelected() {
         fillingsTab.shouldBe(Condition.cssClass(CURRENT_TAB_CSS_LASS_NAME));
         return this;
     }
 
+    @Step("Проверка выбранности вкладки с булочками.")
     public ConstructorPage shouldBunTabBeSelected() {
         bunsTab.shouldBe(Condition.cssClass(CURRENT_TAB_CSS_LASS_NAME));
         return this;
