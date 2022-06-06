@@ -13,13 +13,13 @@ import org.openqa.selenium.support.How;
 public class ProfilePage {
     public static final String PAGE_URL = "https://stellarburgers.nomoreparties.site/account/profile";
 
-    @FindBy(how = How.XPATH, using = ".//a[@class='AppHeader_header__link__3D_hX'][@href='/']")
+    @FindBy(xpath = ".//a[@class='AppHeader_header__link__3D_hX'][@href='/']")
     private SelenideElement constructorPageLink;
 
-    @FindBy(how = How.XPATH, using = ".//div[@class='AppHeader_header__logo__2D0X2']/a[@href='/']")
+    @FindBy(xpath = ".//div[@class='AppHeader_header__logo__2D0X2']/a[@href='/']")
     private SelenideElement logoImage;
 
-    @FindBy(how = How.XPATH, using = ".//button[text()='Выход']")
+    @FindBy(xpath = ".//button[text()='Выход']")
     private SelenideElement logOutButton;
 
     @Step("Клик по ссылке на Конструктор.")

@@ -15,16 +15,16 @@ import org.openqa.selenium.support.How;
 public class RegistrationPage {
     public static final String PAGE_URL = "https://stellarburgers.nomoreparties.site/register";
 
-    @FindBy(how = How.XPATH, using = ".//input[@class='text input__textfield text_type_main-default']")
+    @FindBy(xpath = ".//input[@class='text input__textfield text_type_main-default']")
     private ElementsCollection fields;
 
-    @FindBy(how = How.XPATH, using = ".//button[text()='Зарегистрироваться']")
+    @FindBy(xpath = ".//button[text()='Зарегистрироваться']")
     private SelenideElement registrationButton;
 
-    @FindBy(how = How.XPATH,using = ".//p[text()='Некорректный пароль']")
+    @FindBy(xpath = ".//p[text()='Некорректный пароль']")
     private SelenideElement passwordError;
 
-    @FindBy(how = How.XPATH,using = ".//a[text()='Войти']")
+    @FindBy(xpath = ".//a[text()='Войти']")
     private SelenideElement enterLink;
 
     private SelenideElement getNameField(){

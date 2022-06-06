@@ -18,19 +18,19 @@ public class ConstructorPage {
      */
     public static final String CURRENT_TAB_CSS_LASS_NAME = "tab_tab_type_current__2BEPc";
 
-    @FindBy(how = How.XPATH, using = ".//a[@class='AppHeader_header__link__3D_hX'][@href='/account']")
+    @FindBy(xpath = ".//a[@class='AppHeader_header__link__3D_hX'][@href='/account']")
     private SelenideElement profilePageLink;
 
-    @FindBy(how = How.XPATH, using = ".//button[text()='Войти в аккаунт']")
+    @FindBy(xpath = ".//button[text()='Войти в аккаунт']")
     private SelenideElement loginButton;
 
-    @FindBy(how = How.XPATH,using = ".//div[span[text()='Булки']]")
+    @FindBy(xpath = ".//div[span[text()='Булки']]")
     private SelenideElement bunsTab;
 
-    @FindBy(how = How.XPATH,using = ".//div[span[text()='Соусы']]")
+    @FindBy(xpath = ".//div[span[text()='Соусы']]")
     private SelenideElement saucesTab;
 
-    @FindBy(how = How.XPATH,using = ".//div[span[text()='Начинки']]")
+    @FindBy(xpath = ".//div[span[text()='Начинки']]")
     private SelenideElement fillingsTab;
 
     @Step("Клик по кнопке профиля.")

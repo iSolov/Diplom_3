@@ -14,19 +14,19 @@ import org.openqa.selenium.support.How;
 public class LoginPage {
     public static final String PAGE_URL = "https://stellarburgers.nomoreparties.site/login";
 
-    @FindBy(how = How.XPATH, using = ".//button[text()='Войти']")
+    @FindBy(xpath = ".//button[text()='Войти']")
     private SelenideElement loginButton;
 
-    @FindBy(how = How.XPATH, using = ".//input[@type='text']")
+    @FindBy(xpath = ".//input[@type='text']")
     private SelenideElement emailField;
 
-    @FindBy(how = How.XPATH, using = ".//input[@type='password']")
+    @FindBy(xpath = ".//input[@type='password']")
     private SelenideElement passwordField;
 
-    @FindBy(how = How.XPATH, using = ".//a[@class='Auth_link__1fOlj'][@href='/register']")
+    @FindBy(xpath = ".//a[@class='Auth_link__1fOlj'][@href='/register']")
     private SelenideElement registrationLink;
 
-    @FindBy(how = How.LINK_TEXT, using = "Восстановить пароль")
+    @FindBy(linkText = "Восстановить пароль")
     private SelenideElement restorePassword;
 
     @Step("Заполнение полей email и пароля.")

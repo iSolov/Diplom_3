@@ -12,7 +12,7 @@ import org.openqa.selenium.support.How;
 public class RestorePasswordPage {
     public static final String PAGE_URL = "https://stellarburgers.nomoreparties.site/forgot-password";
 
-    @FindBy(how = How.LINK_TEXT, using = "Войти")
+    @FindBy(linkText = "Войти")
     private SelenideElement loginButton;
 
     @Step("Клик по кнопке входа.")
