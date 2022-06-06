@@ -18,14 +18,26 @@ public class ConstructorTest {
     }
 
     @Test
-    @DisplayName("Проверка переключения вкладок.")
-    public void shouldLoginByLoginButtonTest() {
-        // Последовательное переключение вкладок (выбранная вкладка должна содержать определенный стиль).
+    @DisplayName("Должна быть возможность выбрать вкладку с соусами.")
+    public void shouldSouseTabSeSelectedTest() {
         constructorPage
                 .clickSouse()
-                .shouldSouseTabBeSelected()
+                .shouldSouseTabBeSelected();
+    }
+
+    @Test
+    @DisplayName("Должна быть возможность выбрать вкладку с начинками.")
+    public void shouldFillingTabSeSelectedTest() {
+        constructorPage
                 .clickFilling()
-                .shouldFillingTabBeSelected()
+                .shouldFillingTabBeSelected();
+    }
+
+    @Test
+    @DisplayName("Должна быть возможность выбрать вкладку с булочками.")
+    public void shouldBunTabSeSelectedTest() {
+        constructorPage
+                .clickSouse()
                 .clickBun()
                 .shouldBunTabBeSelected();
     }
