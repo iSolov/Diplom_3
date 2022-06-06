@@ -1,5 +1,6 @@
 package client;
 
+import io.qameta.allure.Step;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -36,6 +37,7 @@ public class UsersApiClient {
     /**
      * Создание нового пользователя.
      */
+    @Step("Регистрация нового пользователя.")
     public Response register(User user) {
         return given()
                 .spec(getRequestSpecification())
@@ -47,6 +49,7 @@ public class UsersApiClient {
     /**
      * Авторизация пользователя.
      */
+    @Step("Авторизация пользователя.")
     public void login(User user) {
         AuthorizationInfo authorizationInfo = given()
                 .spec(getRequestSpecification())
@@ -61,6 +64,7 @@ public class UsersApiClient {
     /**
      * Удаляет всех созданных пользователей.
      */
+    @Step("Удаление всех созданных пользователей.")
     public void deleteCreatedUsers() {
         usersTokensForDelete.forEach(this::delete);
     }
@@ -68,6 +72,7 @@ public class UsersApiClient {
     /**
      * Удаляет пользователя по токену.
      */
+    @Step("Удаление пользователя.")
     public void delete(String token) {
         given()
                 .spec(getRequestSpecification())
